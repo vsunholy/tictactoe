@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", serif;
+}
+
+body {
+    font-family: "Josefin Sans", serif;
+}
+
+h1 {
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}
+
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    text-align: center;
+    padding: 30px 100px;
+    color: blueviolet;
+
+
+}
+
+.info {
+    margin-top: 25px;
+    font-weight: 700;
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+.board {
+    display: flex;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5%;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.cell {
+    width: 25%;
+    height: 25%;
+    border: 2px solid black;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #84d7d8;
+  
+
+
+}
+
+
+@media (max-width: 768px) {
+    .board {
+        width: 95%;
+        gap: 10px;
+    }
+
+    .cell {
+        border: 1.5px solid black;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .board {
+        width: 100%;
+        gap: 5px;
+    }
+
+    .cell {
+        width: 28%;
+        height: 28%;
+        border: 1px solid black;
+    }
+}
+
+.cell:hover {
+    background-color: #00DBDE;
+    background-image: linear-gradient(10deg, #00DBDE 10%, #FC00FF 90%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.new {
+    background-color: greenyellow;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+.new:hover {
+    background-color: lightseagreen;
+}
+
+.winColor {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    font-size: 100px;
+    font-weight: 900;
+    color: blueviolet;
+}
+.win {
+    background-color: #00DBDE;
+    background-image: linear-gradient(20deg, #00DBDE 0%, #FC00FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    
+}
+
+.cube {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border: 3.5px solid blueviolet;
+    animation: cubeMove 10s infinite;
+    animation-delay: 1s;
+}
+
+.cube:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation-duration: 3s;
+}
+
+.cube:nth-child(3) {
+    top: 15%;
+    left: 65%;
+    animation-duration: 2s;
+}
+
+.cube:nth-child(4) {
+    top: 10%;
+    left: 35%;
+    animation-duration: 4s;
+}
+
+.cube:nth-child(5) {
+    left: 5%;
+    top: 30%;
+    animation-duration: 5s;
+}
+
+.cube:nth-child(6) {
+    left: 74%;
+    top: 80%;
+    animation-duration: 5s;
+}
+
+@keyframes cubeMove {
+    from {
+        transform: scale(0) rotate(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(2.5) rotate(1000deg);
+        opacity: 0;
+    }
+}
